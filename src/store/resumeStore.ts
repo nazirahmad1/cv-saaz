@@ -10,7 +10,8 @@ export type SectionId =
   | "education"
   | "skills"
   | "languages"
-  | "certifications";
+  | "certifications"
+  | "references";
 
 export interface ExperienceItem {
   id: string;
@@ -36,6 +37,7 @@ export interface EducationItem {
 export interface SkillItem {
   id: string;
   name: string;
+  level: number;
 }
 
 export interface LanguageItem {
@@ -51,6 +53,14 @@ export interface CertificationItem {
   date: string;
 }
 
+export interface ReferenceItem {
+  id: string;
+  name: string;
+  relation: string;
+  phone: string;
+  email: string;
+}
+
 export interface PersonalInfo {
   fullName: string;
   jobTitle: string;
@@ -62,12 +72,15 @@ export interface PersonalInfo {
 }
 
 export type FontPairing = "modern" | "classic" | "friendly";
-export type LayoutMode = "classic" | "sidebar";
+export type LayoutMode = "classic" | "sidebar" | "banner" | "timeline" | "profile";
+export type HeadingStyle = "underline" | "boxed" | "border" | "allcaps";
 
 export interface ThemeSettings {
   accent: string;
   font: FontPairing;
   layout: LayoutMode;
+  headingStyle: HeadingStyle;
+  reverseSidebar: boolean;
   showPhoto: boolean;
 }
 
@@ -80,6 +93,7 @@ export interface ResumeState {
   skills: SkillItem[];
   languages: LanguageItem[];
   certifications: CertificationItem[];
+  references: ReferenceItem[];
   sectionOrder: SectionId[];
   hiddenSections: SectionId[];
   theme: ThemeSettings;
@@ -97,7 +111,7 @@ export interface ResumeState {
   removeEducation: (id: string) => void;
 
   addSkill: (name?: string) => void;
-  updateSkill: (id: string, name: string) => void;
+  updateSkill: (id: string, patch: Partial<SkillItem>) => void;
   removeSkill: (id: string) => void;
 
   addLanguage: (name?: string) => void;
@@ -107,6 +121,10 @@ export interface ResumeState {
   addCertification: () => void;
   updateCertification: (id: string, patch: Partial<CertificationItem>) => void;
   removeCertification: (id: string) => void;
+
+  addReference: () => void;
+  updateReference: (id: string, patch: Partial<ReferenceItem>) => void;
+  removeReference: (id: string) => void;
 
   reorderSections: (order: SectionId[]) => void;
   toggleSectionVisibility: (id: SectionId) => void;
@@ -131,6 +149,8 @@ const defaultTheme: ThemeSettings = {
   accent: "#B98B4E",
   font: "modern",
   layout: "classic",
+  headingStyle: "underline",
+  reverseSidebar: false,
   showPhoto: true,
 };
 
@@ -141,6 +161,7 @@ const defaultOrder: SectionId[] = [
   "skills",
   "languages",
   "certifications",
+  "references",
 ];
 
 export const useResumeStore = create<ResumeState>()(
@@ -154,6 +175,7 @@ export const useResumeStore = create<ResumeState>()(
       skills: [],
       languages: [],
       certifications: [],
+      references: [],
       sectionOrder: defaultOrder,
       hiddenSections: [],
       theme: defaultTheme,
@@ -213,10 +235,10 @@ export const useResumeStore = create<ResumeState>()(
         set((s) => ({ education: s.education.filter((e) => e.id !== id) })),
 
       addSkill: (name = "") =>
-        set((s) => ({ skills: [...s.skills, { id: uid(), name }] })),
-      updateSkill: (id, name) =>
+        set((s) => ({ skills: [...s.skills, { id: uid(), name, level: 75 }] })),
+      updateSkill: (id, patch) =>
         set((s) => ({
-          skills: s.skills.map((sk) => (sk.id === id ? { ...sk, name } : sk)),
+          skills: s.skills.map((sk) => (sk.id === id ? { ...sk, ...patch } : sk)),
         })),
       removeSkill: (id) =>
         set((s) => ({ skills: s.skills.filter((sk) => sk.id !== id) })),
@@ -252,6 +274,24 @@ export const useResumeStore = create<ResumeState>()(
           certifications: s.certifications.filter((c) => c.id !== id),
         })),
 
+      addReference: () =>
+        set((s) => ({
+          references: [
+            ...s.references,
+            { id: uid(), name: "", relation: "", phone: "", email: "" },
+          ],
+        })),
+      updateReference: (id, patch) =>
+        set((s) => ({
+          references: s.references.map((r) =>
+            r.id === id ? { ...r, ...patch } : r
+          ),
+        })),
+      removeReference: (id) =>
+        set((s) => ({
+          references: s.references.filter((r) => r.id !== id),
+        })),
+
       reorderSections: (order) => set({ sectionOrder: order }),
       toggleSectionVisibility: (id) =>
         set((s) => ({
@@ -272,6 +312,7 @@ export const useResumeStore = create<ResumeState>()(
           skills: [],
           languages: [],
           certifications: [],
+          references: [],
           sectionOrder: defaultOrder,
           hiddenSections: [],
           theme: defaultTheme,

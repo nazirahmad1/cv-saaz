@@ -23,6 +23,7 @@ import { EducationEditor } from "@/components/builder/sections/EducationEditor";
 import { SkillsEditor } from "@/components/builder/sections/SkillsEditor";
 import { LanguagesEditor } from "@/components/builder/sections/LanguagesEditor";
 import { CertificationsEditor } from "@/components/builder/sections/CertificationsEditor";
+import { ReferencesEditor } from "@/components/builder/sections/ReferencesEditor";
 import { JsonActions } from "@/components/builder/JsonActions";
 import { GripVertical } from "lucide-react";
 
@@ -33,6 +34,7 @@ const editors: Record<SectionId, React.ComponentType> = {
   skills: SkillsEditor,
   languages: LanguagesEditor,
   certifications: CertificationsEditor,
+  references: ReferencesEditor,
 };
 
 export function BuilderCanvas() {

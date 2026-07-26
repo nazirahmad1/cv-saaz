@@ -13,6 +13,7 @@ function serializeContent(s: ReturnType<typeof useResumeStore.getState>) {
     skills: s.skills,
     languages: s.languages,
     certifications: s.certifications,
+    references: s.references,
     sectionOrder: s.sectionOrder,
     hiddenSections: s.hiddenSections,
   };

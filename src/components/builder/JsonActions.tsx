@@ -40,6 +40,7 @@ export function JsonActions({ compact = false }: { compact?: boolean }) {
       skills: s.skills,
       languages: s.languages,
       certifications: s.certifications,
+      references: s.references,
       sectionOrder: s.sectionOrder,
       hiddenSections: s.hiddenSections,
       theme: s.theme,

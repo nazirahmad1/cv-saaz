@@ -149,3 +149,36 @@ in Settings) to save a resume to a `.json` file and load it back later —
 either to keep editing, to hand a draft to someone else, or to seed a new
 resume programmatically. The file includes all content, section order,
 visibility, theme, and locale.
+
+## Templates (25 presets)
+
+`src/lib/templates.ts` defines 25 named template presets, each combining:
+- a **layout** (`classic` / `sidebar` / `banner` / `timeline`)
+- a **heading style** (`underline` / `boxed` / `border` / `allcaps`)
+- an **accent color** and a **font pairing**
+
+Selecting one in the Templates tab (`TemplateGallery.tsx`) applies all four at
+once via `updateTheme()`. The "Customize" controls below the gallery
+(`AppearancePanel.tsx`) let you fine-tune any of those independently after
+starting from a preset. Add more presets by appending to
+`TEMPLATE_PRESETS` — no new component code needed unless you want an
+entirely new structural layout (in which case extend `LayoutMode` in
+`resumeStore.ts` and add a render branch in `ResumePreview.tsx`).
+
+## "Profile" layout + References section
+
+Added a fifth structural layout, **Profile** (`theme.layout === "profile"`):
+a dark full-height sidebar (photo with a diagonal accent shape, contact info,
+education, references) next to a light main column with icon-badged section
+headings and skill progress bars. It's an original design inspired by the
+genre of dark-sidebar/skill-bar resume templates — not a clone of any
+specific commercial template.
+
+This also added a **References** section (name, relationship, phone, email)
+available in every layout, and skills now carry an optional 0–100 **level**
+(edit it with the slider in the Skills editor) used to draw the progress
+bars in the Profile layout; other layouts still show skills as plain tags.
+
+Five new presets (`profile-amber`, `profile-teal`, `profile-indigo`,
+`profile-brick`, `profile-forest`) were added to `TEMPLATE_PRESETS`, bringing
+the gallery to 30 templates.

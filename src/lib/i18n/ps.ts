@@ -30,6 +30,19 @@ const ps: Dictionary = {
     layout: "چوکاټ",
     layoutClassic: "یو ستنیز",
     layoutSidebar: "د څنګ ستن سره",
+    layoutBanner: "رنګه بینر",
+    layoutTimeline: "د وخت کرښه",
+    layoutProfile: "تیاره څنګ ستن",
+    gallery: "ټیمپلیټونه",
+    galleryHint: "یو پیل ټکی وټاکئ، بیا لاندې نور تنظیمات وکړئ.",
+    customize: "دودیز کول",
+    headingStyle: "د برخو سرلیک بڼه",
+    headingUnderline: "لاندې کرښه",
+    headingBoxed: "بکس شکل",
+    headingBorder: "څنګ کرښه",
+    headingAllcaps: "لوی توري",
+    mirrorSidebar: "د څنګ ستن اړخ بدلول",
+    contactMe: "اړیکې",
     showPhoto: "انځور وښایاست",
   },
   sections: {
@@ -40,6 +53,7 @@ const ps: Dictionary = {
     skills: "مهارتونه",
     languages: "ژبې",
     certifications: "سندونه",
+    references: "پیژندونکي",
   },
   fields: {
     fullName: "بشپړ نوم",
@@ -67,6 +81,10 @@ const ps: Dictionary = {
     certName: "سند",
     certIssuer: "صادرونکی",
     certDate: "نیټه",
+    refName: "بشپړ نوم",
+    refRelation: "اړیکه / دنده",
+    refPhone: "تلیفون",
+    refEmail: "بریښنالیک",
   },
   actions: {
     add: "زیاته کړئ",
@@ -76,6 +94,7 @@ const ps: Dictionary = {
     addSkill: "مهارت زیات کړئ",
     addLanguage: "ژبه زیاته کړئ",
     addCertification: "سند زیات کړئ",
+    addReference: "پیژندونکی زیات کړئ",
     moveUp: "پورته یوسئ",
     moveDown: "ښکته یوسئ",
     toggleVisible: "ښودل / پټول",
@@ -92,6 +111,8 @@ const ps: Dictionary = {
     language: "لکه: انګلیسي",
     certName: "د سند نوم",
     certIssuer: "صادرونکی",
+    refName: "د پیژندونکي نوم",
+    refRelation: "لکه: پخوانی مدیر",
   },
   proficiencyLevels: {
     basic: "لومړنی",
@@ -154,6 +175,7 @@ const ps: Dictionary = {
     skills: "لا تر اوسه کوم مهارت نه دی زیات شوی.",
     languages: "لا تر اوسه کومه ژبه نه ده زیاته شوې.",
     certifications: "لا تر اوسه کوم سند نه دی زیات شوی.",
+    references: "لا تر اوسه کوم پیژندونکی نه دی زیات شوی.",
   },
 };
 

@@ -30,6 +30,19 @@ const en: Dictionary = {
     layout: "Layout",
     layoutClassic: "Single column",
     layoutSidebar: "With sidebar",
+    layoutBanner: "Color banner",
+    layoutTimeline: "Timeline",
+    layoutProfile: "Profile sidebar",
+    gallery: "Templates",
+    galleryHint: "Pick a starting point, then fine-tune below.",
+    customize: "Customize",
+    headingStyle: "Section headings",
+    headingUnderline: "Underline",
+    headingBoxed: "Boxed",
+    headingBorder: "Side border",
+    headingAllcaps: "All caps",
+    mirrorSidebar: "Mirror sidebar side",
+    contactMe: "Contact me",
     showPhoto: "Show photo",
   },
   sections: {
@@ -40,6 +53,7 @@ const en: Dictionary = {
     skills: "Skills",
     languages: "Languages",
     certifications: "Certifications",
+    references: "References",
   },
   fields: {
     fullName: "Full name",
@@ -67,6 +81,10 @@ const en: Dictionary = {
     certName: "Certificate",
     certIssuer: "Issuing organization",
     certDate: "Date",
+    refName: "Full name",
+    refRelation: "Relationship / Role",
+    refPhone: "Phone",
+    refEmail: "Email",
   },
   actions: {
     add: "Add",
@@ -76,6 +94,7 @@ const en: Dictionary = {
     addSkill: "Add skill",
     addLanguage: "Add language",
     addCertification: "Add certificate",
+    addReference: "Add reference",
     moveUp: "Move up",
     moveDown: "Move down",
     toggleVisible: "Show / hide",
@@ -92,6 +111,8 @@ const en: Dictionary = {
     language: "e.g. English",
     certName: "Certificate name",
     certIssuer: "Issuer",
+    refName: "Reference's name",
+    refRelation: "e.g. Former manager",
   },
   proficiencyLevels: {
     basic: "Basic",
@@ -154,6 +175,7 @@ const en: Dictionary = {
     skills: "No skills added yet.",
     languages: "No languages added yet.",
     certifications: "No certificates added yet.",
+    references: "No references added yet.",
   },
 };
 

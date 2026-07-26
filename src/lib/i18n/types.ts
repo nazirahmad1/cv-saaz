@@ -40,6 +40,19 @@ export interface Dictionary {
     layout: string;
     layoutClassic: string;
     layoutSidebar: string;
+    layoutBanner: string;
+    layoutTimeline: string;
+    layoutProfile: string;
+    gallery: string;
+    galleryHint: string;
+    customize: string;
+    headingStyle: string;
+    headingUnderline: string;
+    headingBoxed: string;
+    headingBorder: string;
+    headingAllcaps: string;
+    mirrorSidebar: string;
+    contactMe: string;
     showPhoto: string;
   };
   sections: {
@@ -50,6 +63,7 @@ export interface Dictionary {
     skills: string;
     languages: string;
     certifications: string;
+    references: string;
   };
   fields: {
     fullName: string;
@@ -77,6 +91,10 @@ export interface Dictionary {
     certName: string;
     certIssuer: string;
     certDate: string;
+    refName: string;
+    refRelation: string;
+    refPhone: string;
+    refEmail: string;
   };
   actions: {
     add: string;
@@ -86,6 +104,7 @@ export interface Dictionary {
     addSkill: string;
     addLanguage: string;
     addCertification: string;
+    addReference: string;
     moveUp: string;
     moveDown: string;
     toggleVisible: string;
@@ -102,6 +121,8 @@ export interface Dictionary {
     language: string;
     certName: string;
     certIssuer: string;
+    refName: string;
+    refRelation: string;
   };
   proficiencyLevels: {
     basic: string;
@@ -164,5 +185,6 @@ export interface Dictionary {
     skills: string;
     languages: string;
     certifications: string;
+    references: string;
   };
 }

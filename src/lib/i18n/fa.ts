@@ -30,6 +30,19 @@ const fa: Dictionary = {
     layout: "چیدمان",
     layoutClassic: "تک‌ستونه",
     layoutSidebar: "با ستون کناری",
+    layoutBanner: "بنر رنگی",
+    layoutTimeline: "خط زمانی",
+    layoutProfile: "ستون کناری تیره",
+    gallery: "قالب‌ها",
+    galleryHint: "یک نقطه‌ی شروع انتخاب کن، بعد پایین ریزه‌کاری‌ها رو تنظیم کن.",
+    customize: "سفارشی‌سازی",
+    headingStyle: "سبک عنوان بخش‌ها",
+    headingUnderline: "خط زیر",
+    headingBoxed: "جعبه‌ای",
+    headingBorder: "خط کناری",
+    headingAllcaps: "حروف بزرگ",
+    mirrorSidebar: "جابه‌جایی سمت ستون کناری",
+    contactMe: "راه‌های ارتباطی",
     showPhoto: "نمایش عکس",
   },
   sections: {
@@ -40,6 +53,7 @@ const fa: Dictionary = {
     skills: "مهارت‌ها",
     languages: "زبان‌ها",
     certifications: "گواهینامه‌ها",
+    references: "معرف‌ها",
   },
   fields: {
     fullName: "نام کامل",
@@ -67,6 +81,10 @@ const fa: Dictionary = {
     certName: "گواهینامه",
     certIssuer: "صادرکننده",
     certDate: "تاریخ",
+    refName: "نام کامل",
+    refRelation: "نسبت / سمت",
+    refPhone: "تلفن",
+    refEmail: "ایمیل",
   },
   actions: {
     add: "افزودن",
@@ -76,6 +94,7 @@ const fa: Dictionary = {
     addSkill: "افزودن مهارت",
     addLanguage: "افزودن زبان",
     addCertification: "افزودن گواهینامه",
+    addReference: "افزودن معرف",
     moveUp: "انتقال به بالا",
     moveDown: "انتقال به پایین",
     toggleVisible: "نمایش / پنهان",
@@ -92,6 +111,8 @@ const fa: Dictionary = {
     language: "مثلا: انگلیسی",
     certName: "نام گواهینامه",
     certIssuer: "صادرکننده",
+    refName: "نام معرف",
+    refRelation: "مثلاً: مدیر قبلی",
   },
   proficiencyLevels: {
     basic: "مقدماتی",
@@ -154,6 +175,7 @@ const fa: Dictionary = {
     skills: "هنوز مهارتی اضافه نشده است.",
     languages: "هنوز زبانی اضافه نشده است.",
     certifications: "هنوز گواهینامه‌ای اضافه نشده است.",
+    references: "هنوز معرفی اضافه نشده است.",
   },
 };
 
