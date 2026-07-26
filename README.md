@@ -133,6 +133,8 @@ src/
 supabase/schema.sql               Tables, RLS policies, triggers
 ```
 
+
+![Banner](./public/images/cv-saaz.png)
 ## Copyable / ATS-friendly PDF text
 
 The document fonts (`src/lib/fonts.ts`) are loaded with **explicit static
